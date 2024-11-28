@@ -16,7 +16,9 @@ server.use(express.json())
 
 server.post('/api/messages', 
     async (req, res) => {
+        console.log('-- BEGIN REQUEST --')
         console.log(req.body)
+        console.log('-- END REQUEST --')
         await adapter.process(req, res, (context) => myBot.run(context));
     }
 )
